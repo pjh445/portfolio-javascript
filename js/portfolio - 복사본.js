@@ -52,27 +52,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
             setTimeout( aniScript , 20);
         }
     }
-    
-    const nav = document.getElementsByTagName('nav')[0]; 
-    const nav_a = document.querySelectorAll("#menu a");
 
     const click_a = document.querySelector('#click a');
-    const skill_a = [ click_a , nav_a[1] ];
-    const nav_act = () => nav.classList.add('act');
+    const menu_about = document.querySelector('#menu a[href="#about"]');
+    const skill_a = [ click_a , menu_about ];
 
-    nav_a.forEach( (i,j) => {
-        i.addEventListener("click" , ()=> {
-            j !== 0 ?   nav_act()   :   null;
-            j === 0 ? 
-                        setTimeout( ()=> {nav.removeAttribute("class"); }  , 500 )
-                        : 
-                        null; 
-        });       
-    });
+    const nav = document.getElementsByTagName('nav')[0];
 
-    
-
-     
+    const nav_act = () => nav.classList.add('act'); 
 
     const skillAni = ()=>{        
         nav_act();
@@ -97,10 +84,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
        
         //휠을 200픽셀 이상 아래로 내릴때
         if( window.scrollY >= 400  )  skillAni(); 
-        if( window.scrollY < 400  ) {
-            nav_act();
-            nav.removeAttribute("class");
-        }
+        if( window.scrollY < 400  )   nav_act();
 
         if( window.scrollY >= port1_top )  port1.classList.add('act');
         if( window.scrollY >= port2_top )  port2.classList.add('act');

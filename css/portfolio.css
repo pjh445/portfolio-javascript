@@ -199,15 +199,15 @@ nav p {
 }
 
 /*정사각형 항목들 영역*/
-#event> div> div {
+#event> div> a {
 	width:280px; position:relative; margin-bottom:10px;
-	overflow:hidden;
+	overflow:hidden; 
 }
 
 /*마우스를 대면 투명한 검정바탕이 나타난다*/
-#event> div> div:hover p   {opacity:1;}
+#event> div> a:hover p   {opacity:1;}
 #event> div  img  {transition:0.5s;}
-#event> div> div:hover img {transform:scale(1.1);}
+#event> div> a:hover img {transform:scale(1.1);}
 
 /*투명한 검정바탕*/
 #event> div p {
